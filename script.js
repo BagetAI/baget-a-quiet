@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById('form-message');
     const dbId = 'e4f15751-13fd-418b-a52b-2d5198da933f';
 
+    if (!form) return;
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -10,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = {
             email: formData.get('email'),
             name: formData.get('name'),
-            signup_date: new Date().toISOString().split('T')[0]
+            signup_date: new Date().toISOString()
         };
 
         const submitBtn = form.querySelector('button');
         const originalBtnText = submitBtn.textContent;
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Processing...';
+        submitBtn.textContent = 'Registering Interest...';
 
         try {
             const response = await fetch(`https://baget.ai/api/public/databases/${dbId}/rows`, {
@@ -28,15 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.ok) {
-                message.textContent = 'Welcome to the circle. We will be in touch.';
+                message.textContent = 'Selection request received. Welcome to the circle.';
                 message.className = 'form-message success';
                 form.reset();
             } else {
-                throw new Error('Failed to submit');
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to submit');
             }
         } catch (error) {
             console.error('Submission error:', error);
-            message.textContent = 'An error occurred. Please try again.';
+            message.textContent = 'The sanctuary is busy. Please try again shortly.';
             message.className = 'form-message error';
         } finally {
             submitBtn.disabled = false;
