@@ -1,0 +1,893 @@
+[
+  {
+    "artist": "Miles Davis",
+    "album": "Kind of Blue",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 550,
+    "label": "Analogue Productions (UHQR)",
+    "description": "The definitive audiophile pressing of the best-selling jazz album of all time."
+  },
+  {
+    "artist": "John Coltrane",
+    "album": "A Love Supreme",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Impulse! (Acoustic Sounds)",
+    "description": "Spiritual jazz masterpiece reissued from original tapes by Ryan K. Smith."
+  },
+  {
+    "artist": "Marvin Gaye",
+    "album": "What's Going On",
+    "genre": "Soul",
+    "condition": "Mint",
+    "price": 380,
+    "label": "Mobile Fidelity (MoFi)",
+    "description": "Socially conscious soul with unmatched warmth and mid-range clarity."
+  },
+  {
+    "artist": "Hank Mobley",
+    "album": "Hank",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet 2026)",
+    "description": "A hard-bop treasure featuring Mobley's lyrical tenor work in peak form."
+  },
+  {
+    "artist": "Alice Coltrane",
+    "album": "Journey in Satchidananda",
+    "genre": "Spiritual Jazz",
+    "condition": "Mint",
+    "price": 220,
+    "label": "Impulse! (Acoustic Sounds)",
+    "description": "The quintessential spiritual jazz record; immersive, harp-led meditations."
+  },
+  {
+    "artist": "Art Blakey & The Jazz Messengers",
+    "album": "Free For All",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series 2026)",
+    "description": "Intense, high-energy hard bop with explosive drumming and fierce horns."
+  },
+  {
+    "artist": "Bill Evans Trio",
+    "album": "Sunday at the Village Vanguard",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Riverside (Acoustic Sounds)",
+    "description": "Captures the pinnacle of the Evans-LaFaro-Motian trio's telepathic interplay."
+  },
+  {
+    "artist": "Curtis Mayfield",
+    "album": "Superfly",
+    "genre": "Soul",
+    "condition": "Mint",
+    "price": 260,
+    "label": "Mobile Fidelity (MoFi)",
+    "description": "Gritty cinematic soul with impeccable analog mastering."
+  },
+  {
+    "artist": "Lee Morgan",
+    "album": "City Lights",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet 2026)",
+    "description": "Early Morgan brilliance; a high-fidelity window into 1957 hard bop."
+  },
+  {
+    "artist": "Nina Simone",
+    "album": "Pastel Blues",
+    "genre": "Jazz/Soul",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Philips (Acoustic Sounds)",
+    "description": "Features the definitive 'Sinnerman'; haunting vocals and stark percussion."
+  },
+  {
+    "artist": "Donald Byrd",
+    "album": "Places and Spaces",
+    "genre": "Jazz-Funk",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet)",
+    "description": "The peak of Byrd's collaboration with the Mizell Brothers; pure groove."
+  },
+  {
+    "artist": "Stevie Wonder",
+    "album": "Innervisions",
+    "genre": "Soul",
+    "condition": "Mint",
+    "price": 220,
+    "label": "Tamla (Audiophile Reissue)",
+    "description": "Dense, synthetic soul textures that demand high-fidelity playback."
+  },
+  {
+    "artist": "Pharoah Sanders",
+    "album": "Karma",
+    "genre": "Spiritual Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Impulse! (Acoustic Sounds)",
+    "description": "Contains 'The Creator Has a Master Plan'; cosmic jazz at its finest."
+  },
+  {
+    "artist": "Grant Green",
+    "album": "Idle Moments",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet)",
+    "description": "Late-night jazz guitar classic with a legendary title track."
+  },
+  {
+    "artist": "Dexter Gordon",
+    "album": "Dexter Calling",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet 2026)",
+    "description": "Effortless swing and sophisticated phrasing from a tenor giant."
+  },
+  {
+    "artist": "Charles Mingus",
+    "album": "Mingus Ah Um",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Columbia (Impex Records)",
+    "description": "A dense, blues-inflected masterpiece of jazz composition."
+  },
+  {
+    "artist": "Aretha Franklin",
+    "album": "I Never Loved a Man the Way I Love You",
+    "genre": "Soul",
+    "condition": "Mint",
+    "price": 220,
+    "label": "Atlantic (VMP Audiophile)",
+    "description": "The album that defined the Queen of Soul; Muscle Shoals rhythm section."
+  },
+  {
+    "artist": "Sonny Rollins",
+    "album": "Way Out West",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Contemporary (Acoustic Sounds)",
+    "description": "Stark trio recording known for its incredible spatial realism."
+  },
+  {
+    "artist": "Wayne Shorter",
+    "album": "Speak No Evil",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "Enigmatic compositions that bridge hard bop and the avant-garde."
+  },
+  {
+    "artist": "Gil Scott-Heron",
+    "album": "Pieces of a Man",
+    "genre": "Soul/Jazz",
+    "condition": "NM",
+    "price": 190,
+    "label": "Flying Dutchman (Remaster)",
+    "description": "Powerful lyricism and lean, jazz-inflected arrangements."
+  },
+  {
+    "artist": "Bill Withers",
+    "album": "Still Bill",
+    "genre": "Soul",
+    "condition": "Mint",
+    "price": 350,
+    "label": "Mobile Fidelity (MoFi)",
+    "description": "Tight acoustic funk with Withers' trademark vocal warmth."
+  },
+  {
+    "artist": "Thelonious Monk",
+    "album": "Monk's Dream",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Columbia (Impex Records)",
+    "description": "Monk's best-selling Columbia debut; angular, playful, and brilliant."
+  },
+  {
+    "artist": "Lonnie Liston Smith",
+    "album": "Expansions",
+    "genre": "Rare Groove",
+    "condition": "NM",
+    "price": 160,
+    "label": "Flying Dutchman (BGP)",
+    "description": "Cosmic jazz-funk that serves as a cornerstone of the 'Quiet' vibe."
+  },
+  {
+    "artist": "Herbie Hancock",
+    "album": "Maiden Voyage",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "A perfect modal jazz concept album; oceanic and sophisticated."
+  },
+  {
+    "artist": "Bobby Hutcherson",
+    "album": "Happenings",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet)",
+    "description": "Lyrical vibes and abstract compositions in a high-fidelity soundstage."
+  },
+  {
+    "artist": "Isaac Hayes",
+    "album": "Hot Buttered Soul",
+    "genre": "Soul",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Stax (Vinyl Me Please)",
+    "description": "Deep, symphonic soul with massive orchestral arrangements."
+  },
+  {
+    "artist": "Chet Baker",
+    "album": "Chet Baker Sings",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet)",
+    "description": "Intimate vocal jazz; the definitive 'cool' listening experience."
+  },
+  {
+    "artist": "Roy Ayers Ubiquity",
+    "album": "Everybody Loves the Sunshine",
+    "genre": "Jazz-Funk",
+    "condition": "NM",
+    "price": 175,
+    "label": "Polydor (Official Reissue)",
+    "description": "The ultimate mellow jazz-funk anthem for sun-drenched TLV afternoons."
+  },
+  {
+    "artist": "Stan Getz / Joao Gilberto",
+    "album": "Getz/Gilberto",
+    "genre": "Bossa Nova",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Verve (Acoustic Sounds)",
+    "description": "The gold standard for bossa nova fidelity and intimacy."
+  },
+  {
+    "artist": "Freddie Hubbard",
+    "album": "Red Clay",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "CTI (Music on Vinyl)",
+    "description": "Signature CTI sound; polished, funky, and harmonically rich."
+  },
+  {
+    "artist": "Al Green",
+    "album": "I'm Still in Love with You",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 165,
+    "label": "Hi Records (Fat Possum)",
+    "description": "The peak of the Willie Mitchell production sound; silky and deep."
+  },
+  {
+    "artist": "Ornette Coleman",
+    "album": "The Shape of Jazz to Come",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 220,
+    "label": "Atlantic (Stereo Reissue)",
+    "description": "Revolutionary piano-less quartet recording that still sounds fresh."
+  },
+  {
+    "artist": "Terry Callier",
+    "album": "What Color Is Love",
+    "genre": "Soul/Folk",
+    "condition": "NM",
+    "price": 180,
+    "label": "Cadet (Official Reissue)",
+    "description": "Orchestral folk-soul with deep emotional resonance."
+  },
+  {
+    "artist": "Jimmy Smith",
+    "album": "Bashin'",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Verve (Acoustic Sounds 2026)",
+    "description": "Smoldering organ jazz backed by a powerful big band."
+  },
+  {
+    "artist": "Pat Metheny Group",
+    "album": "Offramp",
+    "genre": "Jazz",
+    "condition": "NM",
+    "price": 150,
+    "label": "ECM (German Pressing)",
+    "description": "The definitive ECM synth-jazz sound; clean and expansive."
+  },
+  {
+    "artist": "Shuggie Otis",
+    "album": "Inspiration Information",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 160,
+    "label": "Epic (Music on Vinyl)",
+    "description": "Psychedelic soul masterpiece crafted entirely in Otis's home studio."
+  },
+  {
+    "artist": "Lee Dorsey",
+    "album": "Yes We Can",
+    "genre": "Funk/Soul",
+    "condition": "NM",
+    "price": 170,
+    "label": "Polydor (Official Reissue)",
+    "description": "Essential New Orleans funk produced by Allen Toussaint."
+  },
+  {
+    "artist": "Andrew Hill",
+    "album": "Point of Departure",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet)",
+    "description": "Complex, angular avant-bop that rewards repeated listens."
+  },
+  {
+    "artist": "Syl Johnson",
+    "album": "Is It Because I'm Black",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 185,
+    "label": "Twinight (Numero Group)",
+    "description": "Deeply funky social commentary from the heart of Chicago soul."
+  },
+  {
+    "artist": "Cannonball Adderley",
+    "album": "Somethin' Else",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "Essentially a Miles Davis album in disguise; sophisticated and swinging."
+  },
+  {
+    "artist": "Dorothy Ashby",
+    "album": "Afro-Harping",
+    "genre": "Jazz",
+    "condition": "NM",
+    "price": 190,
+    "label": "Cadet (Verve By Request)",
+    "description": "Groovy, psychedelic jazz harp that defines the rare-groove sound."
+  },
+  {
+    "artist": "Marlena Shaw",
+    "album": "The Spice of Life",
+    "genre": "Soul/Jazz",
+    "condition": "NM",
+    "price": 170,
+    "label": "Cadet (Official Reissue)",
+    "description": "Contains 'California Soul'; a masterclass in vocal power and groove."
+  },
+  {
+    "artist": "McCoy Tyner",
+    "album": "The Real McCoy",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "Powerful modal jazz featuring Joe Henderson and Elvin Jones."
+  },
+  {
+    "artist": "Donny Hathaway",
+    "album": "Live",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 180,
+    "label": "Atco (Official Reissue)",
+    "description": "Widely considered the greatest live soul album ever recorded."
+  },
+  {
+    "artist": "Jackie McLean",
+    "album": "Destination... Out!",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet)",
+    "description": "McLean's pivot toward the avant-garde; spacious and searching."
+  },
+  {
+    "artist": "Weldon Irvine",
+    "album": "Liberated Brother",
+    "genre": "Rare Groove",
+    "condition": "NM",
+    "price": 200,
+    "label": "Nodlew (Official Reissue)",
+    "description": "Independent spiritual jazz-funk of the highest order."
+  },
+  {
+    "artist": "Nina Simone",
+    "album": "Little Girl Blue",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Bethlehem (Analogue Productions)",
+    "description": "The debut that introduced Simone's unique blend of jazz and classical."
+  },
+  {
+    "artist": "Horace Silver",
+    "album": "Song for My Father",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "Infectious hard bop with a touch of Cape Verdean soul."
+  },
+  {
+    "artist": "Bill Evans",
+    "album": "Waltz for Debby",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Riverside (Acoustic Sounds)",
+    "description": "The companion to 'Sunday at the Village Vanguard'; equally essential."
+  },
+  {
+    "artist": "Curtis Amy",
+    "album": "Tippin' On Through",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Pacific Jazz (Tone Poet 2026)",
+    "description": "Soulful West Coast hard bop from a criminally underrated saxophonist."
+  },
+  {
+    "artist": "Sly & The Family Stone",
+    "album": "There's a Riot Goin' On",
+    "genre": "Soul/Funk",
+    "condition": "NM",
+    "price": 220,
+    "label": "Epic (Pure Pleasure)",
+    "description": "Dark, drugged-out funk that reshaped the soul landscape."
+  },
+  {
+    "artist": "Joe Henderson",
+    "album": "Page One",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "Henderson's stellar debut, featuring 'Blue Bossa' and 'Recorda Me'."
+  },
+  {
+    "artist": "The Meters",
+    "album": "Look-Ka Py Py",
+    "genre": "Funk",
+    "condition": "NM",
+    "price": 170,
+    "label": "Josie (Jackpot Records)",
+    "description": "The foundation of syncopated New Orleans funk."
+  },
+  {
+    "artist": "Clifford Brown",
+    "album": "Memorial Album",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "The definitive collection of the trumpet phenom's early recordings."
+  },
+  {
+    "artist": "Gil Evans",
+    "album": "Out of the Cool",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Impulse! (Acoustic Sounds)",
+    "description": "Stunning orchestral arrangements with an emphasis on space."
+  },
+  {
+    "artist": "Etta James",
+    "album": "Tell Mama",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 165,
+    "label": "Cadet (Official Reissue)",
+    "description": "Fierce, brassy soul recorded at FAME Studios in Muscle Shoals."
+  },
+  {
+    "artist": "Donald Byrd",
+    "album": "Royal Flush",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet)",
+    "description": "Byrd's bridge from hard bop to soul-jazz; features Herbie Hancock."
+  },
+  {
+    "artist": "Gary Bartz NTU Troop",
+    "album": "I've Known Rivers",
+    "genre": "Spiritual Jazz",
+    "condition": "NM",
+    "price": 190,
+    "label": "Prestige (Official Reissue)",
+    "description": "Deeply spiritual and political jazz recorded live at Montreux."
+  },
+  {
+    "artist": "The Spinners",
+    "album": "Spinners",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 160,
+    "label": "Atlantic (Official Reissue)",
+    "description": "The pinnacle of Thom Bell's lush Philadelphia soul production."
+  },
+  {
+    "artist": "Bud Powell",
+    "album": "The Amazing Bud Powell, Vol. 1",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "The architect of bebop piano in his prime."
+  },
+  {
+    "artist": "Mulatu Astatke",
+    "album": "Ethio Jazz",
+    "genre": "Jazz",
+    "condition": "NM",
+    "price": 180,
+    "label": "Amha (Fortuna Records)",
+    "description": "Essential Ethio-Jazz; mysterious, funky, and evocative."
+  },
+  {
+    "artist": "Max Roach",
+    "album": "We Insist! Freedom Now Suite",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Candid (Audiophile Reissue)",
+    "description": "A powerful, visceral fusion of jazz and civil rights protest."
+  },
+  {
+    "artist": "Quincy Jones",
+    "album": "Walking in Space",
+    "genre": "Jazz-Funk",
+    "condition": "NM",
+    "price": 170,
+    "label": "A&M (CTI Series)",
+    "description": "Big band meets psychedelia; lush and highly influential."
+  },
+  {
+    "artist": "Blue Mitchell",
+    "album": "Boss Horn",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet 2026)",
+    "description": "High-fidelity hard bop with Mitchell's crisp, melodic trumpet leads."
+  },
+  {
+    "artist": "Ann Peebles",
+    "album": "I Can't Stand the Rain",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 165,
+    "label": "Hi Records (Fat Possum)",
+    "description": "Atmospheric, minimal soul that feels incredibly contemporary."
+  },
+  {
+    "artist": "Grant Green",
+    "album": "Feelin' the Spirit",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet)",
+    "description": "Spirituals reimagined through Grant Green's soulful jazz lens."
+  },
+  {
+    "artist": "Oscar Peterson Trio",
+    "album": "Affinity",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Verve (Acoustic Sounds 2026)",
+    "description": "Breathtaking technical mastery and deep swing from the legendary trio."
+  },
+  {
+    "artist": "William DeVaughn",
+    "album": "Be Thankful for What You Got",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 170,
+    "label": "TEC (Official Reissue)",
+    "description": "Mellow Philadelphia soul; the title track is a low-rider classic."
+  },
+  {
+    "artist": "Kenny Burrell",
+    "album": "Midnight Blue",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "The ultimate late-night jazz guitar record; bluesy and unhurried."
+  },
+  {
+    "artist": "Gene Russell",
+    "album": "New Direction",
+    "genre": "Spiritual Jazz",
+    "condition": "NM",
+    "price": 200,
+    "label": "Black Jazz (Real Gone Music)",
+    "description": "The first release from the seminal Black Jazz label; soul-jazz with edge."
+  },
+  {
+    "artist": "The O'Jays",
+    "album": "Back Stabbers",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 165,
+    "label": "Philadelphia International",
+    "description": "Gamble & Huff's production at its most polished and political."
+  },
+  {
+    "artist": "Stanley Turrentine",
+    "album": "Look Out!",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "Gritty, soulful tenor sax that bridges jazz and R&B."
+  },
+  {
+    "artist": "Sun Ra",
+    "album": "Lanquidity",
+    "genre": "Spiritual Jazz",
+    "condition": "NM",
+    "price": 190,
+    "label": "Philly Jazz (Strut Records)",
+    "description": "Sun Ra's most 'accessible' and groovy funk-adjacent cosmic jazz."
+  },
+  {
+    "artist": "Azymuth",
+    "album": "Light as a Feather",
+    "genre": "Jazz-Funk",
+    "condition": "NM",
+    "price": 180,
+    "label": "Far Out (Official Reissue)",
+    "description": "Brazilian 'Samba Doido'; infectious keys and driving percussion."
+  },
+  {
+    "artist": "Fred Jackson",
+    "album": "Hootin' N Tootin'",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet 2026)",
+    "description": "Deep-fried soul-jazz with heavy blues influence and swinging horns."
+  },
+  {
+    "artist": "The Stylistics",
+    "album": "The Stylistics",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 160,
+    "label": "Avco (Official Reissue)",
+    "description": "The blueprint for sweet, falsetto-led Philly soul."
+  },
+  {
+    "artist": "Lawrence Marable",
+    "album": "Tenorman",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Jazz: West (Tone Poet 2026)",
+    "description": "Rare West Coast session featuring James Clay's robust tenor work."
+  },
+  {
+    "artist": "Ahmad Jamal",
+    "album": "The Awakening",
+    "genre": "Jazz",
+    "condition": "NM",
+    "price": 190,
+    "label": "Impulse! (Official Reissue)",
+    "description": "Sparse, hypnotic piano jazz that became a hip-hop sampling goldmine."
+  },
+  {
+    "artist": "Esther Phillips",
+    "album": "From a Whisper to a Scream",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 170,
+    "label": "Kudu (Official Reissue)",
+    "description": "Raw, emotionally charged soul over sophisticated CTI arrangements."
+  },
+  {
+    "artist": "Tyrone Washington",
+    "album": "Natural Essence",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 210,
+    "label": "Blue Note (Tone Poet 2026)",
+    "description": "A rare 1967 gem of adventurous, high-fidelity post-bop."
+  },
+  {
+    "artist": "Bobbi Humphrey",
+    "album": "Blacks and Blues",
+    "genre": "Jazz-Funk",
+    "condition": "NM",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "Flute-led jazz-funk that is both breezy and deeply funky."
+  },
+  {
+    "artist": "The Blackbyrds",
+    "album": "City Life",
+    "genre": "Jazz-Funk",
+    "condition": "NM",
+    "price": 170,
+    "label": "Fantasy (Official Reissue)",
+    "description": "Produced by Donald Byrd; features the classic 'Happy Music'."
+  },
+  {
+    "artist": "Hank Mobley",
+    "album": "Soul Station",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "Widely regarded as the perfect hard bop album; every note is essential."
+  },
+  {
+    "artist": "Leroy Hutson",
+    "album": "Hutson",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 175,
+    "label": "Curtom (Acid Jazz)",
+    "description": "The sophisticated sound of mid-70s Chicago soul."
+  },
+  {
+    "artist": "Art Blakey",
+    "album": "Moanin'",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "The gospel-infused blueprint for the hard bop movement."
+  },
+  {
+    "artist": "Cymande",
+    "album": "Cymande",
+    "genre": "Funk/Rare Groove",
+    "condition": "NM",
+    "price": 180,
+    "label": "Janus (Partisan Records)",
+    "description": "A unique fusion of nyabinghi rhythms, soul, and funk."
+  },
+  {
+    "artist": "Lee Morgan",
+    "album": "The Sidewinder",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "The track that sparked the 1960s soul-jazz craze."
+  },
+  {
+    "artist": "Minnie Riperton",
+    "album": "Come to My Garden",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 175,
+    "label": "GRT (Official Reissue)",
+    "description": "Baroque soul with Riperton's stunning five-octave range."
+  },
+  {
+    "artist": "Ella Fitzgerald / Louis Armstrong",
+    "album": "Ella and Louis",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Verve (Acoustic Sounds)",
+    "description": "Unrivaled vocal intimacy; a perfect 1-on-1 listening experience."
+  },
+  {
+    "artist": "Bobby Womack",
+    "album": "Understanding",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 165,
+    "label": "United Artists (Official Reissue)",
+    "description": "Raw, grit-filled soul from one of the genre's greatest writers."
+  },
+  {
+    "artist": "Ahmad Jamal",
+    "album": "Live at the Pershing: But Not for Me",
+    "genre": "Jazz",
+    "condition": "NM",
+    "price": 160,
+    "label": "Argo (Official Reissue)",
+    "description": "Jamal's breakthrough live set; a masterclass in space and dynamics."
+  },
+  {
+    "artist": "Ramsey Lewis",
+    "album": "Sun Goddess",
+    "genre": "Jazz-Funk",
+    "condition": "NM",
+    "price": 155,
+    "label": "Columbia (Official Reissue)",
+    "description": "Smooth, ethereal jazz-funk featuring Earth, Wind & Fire."
+  },
+  {
+    "artist": "Lou Donaldson",
+    "album": "Blues Walk",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "The perfect marriage of bebop chops and soulful blues sensibility."
+  },
+  {
+    "artist": "The Soul Children",
+    "album": "Genesis",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 170,
+    "label": "Stax (Official Reissue)",
+    "description": "Church-inflected vocal harmonies and gritty Stax production."
+  },
+  {
+    "artist": "Dexter Gordon",
+    "album": "Go!",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "Gordon's favorite recording; relaxed, swinging, and masterful."
+  },
+  {
+    "artist": "James Brown",
+    "album": "In the Jungle Groove",
+    "genre": "Funk",
+    "condition": "NM",
+    "price": 185,
+    "label": "Polydor (Official Reissue)",
+    "description": "The DNA of funk; contains the legendary 'Funky Drummer' break."
+  },
+  {
+    "artist": "Kenny Dorham",
+    "album": "Una Mas",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 185,
+    "label": "Blue Note (Classic Series)",
+    "description": "A prototype for the bossa-bop sound; elegant and rhythmically rich."
+  },
+  {
+    "artist": "The Main Ingredient",
+    "album": "Euphrates River",
+    "genre": "Soul",
+    "condition": "NM",
+    "price": 160,
+    "label": "RCA (Official Reissue)",
+    "description": "Lush, psychedelic soul with intricate vocal arrangements."
+  },
+  {
+    "artist": "John Coltrane",
+    "album": "Blue Train",
+    "genre": "Jazz",
+    "condition": "Mint",
+    "price": 240,
+    "label": "Blue Note (Tone Poet)",
+    "description": "The only Coltrane-led date for Blue Note; essential hard bop power."
+  }
+]
