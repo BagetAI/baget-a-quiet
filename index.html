@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Quiet | Listening Bar & Record Shop | Tel Aviv</title>
+    <title>A Quiet | High-Fidelity Listening Bar & Record Shop | Tel Aviv</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
     <header class="site-header">
         <div class="container header-container">
-            <div class="logo">A QUIET</div>
+            <a href="/" class="logo">A QUIET</a>
             <nav class="main-nav">
                 <a href="#philosophy">The Philosophy</a>
                 <a href="#collection">The Collection</a>
@@ -25,60 +25,56 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-layout">
-                    <div class="hero-header-box">
-                        <span class="eyebrow">Establishment 2026 / Lev Hair</span>
+                    <div class="hero-text">
+                        <span class="eyebrow">Established 2026 / Lev Hair</span>
                         <h1 class="editorial-title">A Sanctuary for the Active Listener.</h1>
+                        <p class="body-large" style="margin-top: 40px;">Preserving the ritual of sound in a world of background noise.</p>
                     </div>
                     <div class="hero-visual">
                         <img src="images/a-moody-high-end-interior-of-a-listenin.png" alt="A Quiet interior: walnut wood and warm lighting" class="hero-img">
                         <div class="hero-caption">
                             <span>01 / Interior</span>
-                            <p>Warm walnut, vacuum tube glow, and zero-distraction acoustics.</p>
+                            <span>Montefiore District</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="philosophy" class="editorial-spread spread-philosophy">
+        <section id="philosophy" class="editorial-spread">
             <div class="container">
                 <div class="rule-divider"></div>
-                <div class="asymmetric-grid">
-                    <div class="grid-col-1">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
+                    <div>
                         <span class="section-num">01.</span>
                         <h2 class="serif-sub">The Antithesis of the Noise War.</h2>
                     </div>
-                    <div class="grid-col-2">
-                        <p class="body-large">In a city defined by its volume, we choose stillness. A Quiet is a community space built on a strict sub-85dB policy. We believe sound should be a ritual, not a background noise.</p>
-                        <p class="body-standard">Our space is designed for the conversation that happens after the first drink, and the deep listening that happens before the needle lifts. No shouting. No crowds. Just the fidelity of the groove.</p>
-                        <blockquote class="editorial-quote">
-                            "Where the ritual of selection meets the craft of the cocktail."
-                        </blockquote>
+                    <div>
+                        <p class="body-standard">In a city defined by its volume, we choose stillness. A Quiet is a community space built on a strict sub-85dB policy. We believe sound should be a ritual, not background noise.</p>
+                        <p class="body-standard">Our space is designed for the conversation that happens after the first drink, and the deep listening that happens before the needle lifts. No shouting. Just fidelity.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="collection" class="editorial-spread spread-collection">
+        <section id="collection" class="editorial-spread">
             <div class="container">
                 <div class="rule-divider"></div>
-                <div class="asymmetric-grid grid-reverse">
-                    <div class="grid-col-1">
-                        <span class="section-num">02.</span>
-                        <h2 class="serif-sub">The Curated Archive.</h2>
-                        <p class="body-standard">We don't collect records; we curate essentials. Our shop focuses exclusively on high-fidelity pressings of Jazz, Soul, and Rare Groove. From Blue Note first-pressings to modern Japanese audiophile reissues.</p>
-                        <ul class="spec-list">
-                            <li>2x Technics SL-1200G</li>
-                            <li>Leben CS-600X Integrated Tube Amp</li>
-                            <li>Klipsch Cornwall IV Monitors</li>
-                            <li>Ortofon 2M Black Cartridges</li>
-                        </ul>
-                    </div>
-                    <div class="grid-col-2">
-                        <div class="framed-image">
-                            <img src="images/macro-close-up-of-a-vintage-turntable-ne.png" alt="Close up of a record needle" class="featured-img">
-                        </div>
-                    </div>
+                <div style="margin-bottom: 60px;">
+                    <span class="section-num">02.</span>
+                    <h2 class="serif-sub">The Curated Archive</h2>
+                    <p class="body-standard" style="margin-top: 20px;">A filterable selection of essentials from our permanent catalog. High-fidelity pressings only.</p>
+                </div>
+
+                <div class="collection-controls">
+                    <button class="filter-btn active" data-filter="all">All Genres</button>
+                    <button class="filter-btn" data-filter="Jazz">Jazz</button>
+                    <button class="filter-btn" data-filter="Soul">Soul</button>
+                </div>
+
+                <div id="record-gallery" class="record-grid">
+                    <!-- Dynamic inventory injection -->
+                    <div class="loading-state">Syncing with the archive...</div>
                 </div>
             </div>
         </section>
@@ -86,38 +82,50 @@
         <section id="waitlist" class="membership-section">
             <div class="container">
                 <div class="membership-card">
-                    <div class="membership-content">
-                        <h2 class="editorial-title-small">The Quiet Circle</h2>
-                        <p class="membership-desc">Opening soon in the Montefiore district. Members receive first-access to rare vinyl arrivals, locker storage for personal bottles, and exclusive listening hours. Space is limited to preserve the atmosphere.</p>
-                        
-                        <form id="signup-form" class="editorial-form">
-                            <div class="form-row">
-                                <input type="text" id="name" name="name" placeholder="Full Name" required>
-                                <input type="email" id="email" name="email" placeholder="Email Address" required>
-                            </div>
-                            <button type="submit" class="editorial-btn">Request Access to the Circle</button>
-                            <p id="form-message" class="form-message"></p>
-                        </form>
-                    </div>
+                    <h2 class="editorial-title-small">Join the Quiet Circle</h2>
+                    <p class="body-standard" style="margin: 0 auto 40px; color: var(--aged-parchment); opacity: 0.8;">Secure your place in the Founding 100. Members receive first-access to rare arrivals and private listening sessions.</p>
+                    
+                    <form id="signup-form" class="editorial-form">
+                        <div class="form-row">
+                            <input type="text" id="name" name="name" placeholder="Full Name" required>
+                            <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <button type="submit" class="editorial-btn">Request Invitation</button>
+                        <p id="form-message" class="form-message"></p>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Notification Modal -->
+    <div id="notify-modal" class="modal-overlay">
+        <div class="notify-modal">
+            <button id="close-modal" class="close-modal">&times;</button>
+            <h3 class="serif-sub" style="font-size: 24px; margin-bottom: 20px;">Notify Me</h3>
+            <p id="modal-record-title" style="margin-bottom: 30px; font-weight: 600;"></p>
+            <form id="notify-form" class="editorial-form">
+                <input type="hidden" id="record-interest" name="record-interest">
+                <input type="email" id="notify-email" name="email" placeholder="Your Email" required style="color: var(--deep-walnut); border-bottom-color: var(--divider);">
+                <button type="submit" class="editorial-btn">Watch for Arrival</button>
+                <p id="notify-message" class="form-message" style="color: var(--deep-walnut);"></p>
+            </form>
+        </div>
+    </div>
+
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-layout">
-                <div class="footer-left">
-                    <div class="logo">A QUIET</div>
-                    <p class="location">Lev Hair / Montefiore, Tel Aviv</p>
-                </div>
-                <div class="footer-right">
-                    <nav class="footer-nav">
-                        <a href="https://instagram.com/aquiet.tlv" target="_blank">Instagram</a>
-                        <a href="mailto:jefroykin@gmail.com">Contact</a>
-                    </nav>
-                    <p class="copyright">&copy; 2026 A Quiet. Preservation of Sound.</p>
-                </div>
+        <div class="container footer-layout">
+            <div class="footer-left">
+                <div class="logo">A QUIET</div>
+                <p style="margin-top: 10px; color: var(--muted); font-size: 13px;">Lev Hair / Montefiore, Tel Aviv</p>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav">
+                    <a href="#philosophy">Philosophy</a>
+                    <a href="#collection">Collection</a>
+                    <a href="https://instagram.com/aquiet.tlv" target="_blank">Instagram</a>
+                </nav>
+                <p style="color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">&copy; 2026 A Quiet. Preservation of Sound.</p>
             </div>
         </div>
     </footer>
