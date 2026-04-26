@@ -108,6 +108,10 @@ body {
 .site-header {
     padding: 40px 0;
     border-bottom: 1px solid var(--divider);
+    position: sticky;
+    top: 0;
+    background: var(--aged-parchment);
+    z-index: 100;
 }
 
 .header-container {
@@ -164,6 +168,94 @@ body {
     color: var(--muted);
     display: flex;
     justify-content: space-between;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.price-card {
+    background-color: white;
+    border: 1px solid var(--divider);
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.price-card.featured {
+    background-color: var(--deep-walnut);
+    color: var(--aged-parchment);
+    transform: translateY(-20px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.price-header {
+    margin-bottom: 40px;
+}
+
+.price-tier {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.price-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.price-amount {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.price-features {
+    list-style: none;
+    margin-bottom: 50px;
+    flex-grow: 1;
+}
+
+.price-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(60, 47, 47, 0.05);
+    font-size: 16px;
+}
+
+.price-card.featured .price-features li {
+    border-bottom-color: rgba(245, 242, 233, 0.1);
+}
+
+.price-btn {
+    display: block;
+    text-align: center;
+    padding: 18px;
+    background-color: var(--deep-walnut);
+    color: var(--aged-parchment);
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.price-btn.featured {
+    background-color: var(--accent);
+    color: var(--deep-walnut);
+}
+
+.price-btn:hover {
+    opacity: 0.9;
 }
 
 /* Collection Gallery */
@@ -414,6 +506,8 @@ body {
     .container { padding: 0 40px; }
     .hero-layout { grid-template-columns: 1fr; }
     .hero-img { height: 500px; }
+    .pricing-grid { grid-template-columns: 1fr; gap: 40px; }
+    .price-card.featured { transform: none; }
 }
 
 @media (max-width: 768px) {
