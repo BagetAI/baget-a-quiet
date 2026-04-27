@@ -16,6 +16,7 @@
             <nav class="main-nav">
                 <a href="#philosophy">Philosophy</a>
                 <a href="#collection">Collection</a>
+                <a href="#community">Community</a>
                 <a href="#membership">Founding Circle</a>
                 <a href="#waitlist" class="cta-link">Join Waitlist</a>
             </nav>
@@ -61,11 +62,53 @@
             </div>
         </section>
 
+        <section id="community" class="editorial-spread">
+            <div class="container">
+                <div class="rule-divider"></div>
+                <div style="margin-bottom: 60px;">
+                    <span class="section-num">02.</span>
+                    <h2 class="serif-sub">Community Density</h2>
+                    <p class="body-standard" style="margin-top: 20px;">The ritual is spreading. We are tracking high concentrations of interest in Tel Aviv's most design-forward corridors.</p>
+                </div>
+
+                <div class="map-visualization">
+                    <div class="map-container">
+                        <img src="images/a-high-end-minimalist-map-of-tel-aviv-hi.png" alt="Map of community interest in Tel Aviv" class="community-map">
+                        <div class="map-overlay">
+                            <div class="map-hotspot lev-hair" data-neighborhood="Lev HaIr">
+                                <span class="hotspot-label">Lev HaIr</span>
+                                <span class="hotspot-pulse"></span>
+                            </div>
+                            <div class="map-hotspot montefiore" data-neighborhood="Montefiore">
+                                <span class="hotspot-label">Montefiore</span>
+                                <span class="hotspot-pulse"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="total-interest">178</span>
+                            <span class="stat-label">Waitlist Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">62%</span>
+                            <span class="stat-label">In Target Districts</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Top 3</span>
+                            <span class="stat-label">Architectural Firms</span>
+                        </div>
+                        <p class="body-small" style="margin-top: 40px; color: var(--muted);">Real-time demand data utilized for site acquisition and Category 4.2.a licensing priority.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="membership" class="editorial-spread">
             <div class="container">
                 <div class="rule-divider"></div>
                 <div style="margin-bottom: 60px; text-align: center;">
-                    <span class="section-num">02.</span>
+                    <span class="section-num">03.</span>
                     <h2 class="editorial-title-small">The Founding Circle</h2>
                     <p class="body-standard" style="margin: 20px auto 40px; max-width: 600px;">Limited to 100 individuals. These tiers fund the sanctuary's physical build-out and secure your permanent place in the room.</p>
                 </div>
@@ -133,7 +176,7 @@
             <div class="container">
                 <div class="rule-divider"></div>
                 <div style="margin-bottom: 60px;">
-                    <span class="section-num">03.</span>
+                    <span class="section-num">04.</span>
                     <h2 class="serif-sub">The Curated Archive</h2>
                     <p class="body-standard" style="margin-top: 20px;">Browse the "Essential 100" – a selection of AAA audiophile pressings and rare groove imports available in our shop.</p>
                 </div>
@@ -160,6 +203,16 @@
                         <div class="form-row">
                             <input type="text" id="name" name="name" placeholder="Full Name" required>
                             <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-row">
+                            <select id="neighborhood" name="neighborhood" style="background: transparent; border: none; border-bottom: 1px solid rgba(245, 242, 233, 0.2); padding: 15px 0; color: var(--aged-parchment); font-family: var(--font-body); font-size: 16px; outline: none; appearance: none; -webkit-appearance: none;">
+                                <option value="" disabled selected style="color: #333;">Preferred Neighborhood</option>
+                                <option value="Lev HaIr" style="color: #333;">Lev HaIr</option>
+                                <option value="Montefiore" style="color: #333;">Montefiore</option>
+                                <option value="Florentin" style="color: #333;">Florentin</option>
+                                <option value="Neve Tzedek" style="color: #333;">Neve Tzedek</option>
+                                <option value="Other" style="color: #333;">Other</option>
+                            </select>
                         </div>
                         <button type="submit" class="editorial-btn">Request Invitation</button>
                         <p id="form-message" class="form-message"></p>

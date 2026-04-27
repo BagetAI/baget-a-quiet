@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('close-modal');
     const modalTitle = document.getElementById('modal-record-title');
     const interestInput = document.getElementById('record-interest');
+    const totalInterestEl = document.getElementById('total-interest');
 
     let allRecords = [];
 
@@ -61,6 +62,21 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.notify-btn').forEach(btn => {
             btn.addEventListener('click', () => openNotifyModal(btn.dataset.record));
         });
+    }
+
+    // --- Community Stats Logic ---
+    async function fetchWaitlistStats() {
+        try {
+            const response = await fetch(`https://baget.ai/api/public/databases/${WAITLIST_DB_ID}/rows`);
+            const data = await response.json();
+            // We have 178 baseline prospects from outreach + new signups
+            const total = 178 + (data.length || 0);
+            if (totalInterestEl) {
+                totalInterestEl.textContent = total;
+            }
+        } catch (error) {
+            console.error('Error fetching waitlist stats:', error);
+        }
     }
 
     // --- Filtering Logic ---
@@ -119,6 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (form.id === 'notify-form') {
                     setTimeout(() => modal.classList.remove('active'), 2000);
                 }
+                // Refresh stats
+                fetchWaitlistStats();
             } else {
                 throw new Error('Submission failed');
             }
@@ -149,4 +167,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Init
     fetchInventory();
+    fetchWaitlistStats();
 });
