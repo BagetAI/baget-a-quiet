@@ -1,0 +1,97 @@
+.portal-body {
+    background-color: var(--aged-parchment);
+}
+
+.auth-container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    background: white;
+    padding: 80px;
+    border: 1px solid var(--divider);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.portal-main {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.portal-hero {
+    padding: 100px 0;
+}
+
+.founder-message {
+    margin-top: 60px;
+    border-left: 4px solid var(--accent);
+    padding-left: 40px;
+}
+
+.build-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.build-item {
+    position: relative;
+}
+
+.build-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: sepia(0.2) contrast(1.1);
+}
+
+.build-caption {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.status-card {
+    background-color: var(--deep-walnut);
+    color: var(--aged-parchment);
+    padding: 60px;
+    border-radius: 2px;
+}
+
+.perks-list {
+    margin-top: 30px;
+    border-top: 1px solid rgba(245, 242, 233, 0.1);
+}
+
+.loading-state {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--muted);
+    padding: 40px 0;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .auth-card { padding: 40px 20px; }
+    .build-grid { grid-template-columns: 1fr; }
+    .build-img { height: 300px; }
+}

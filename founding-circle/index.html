@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Portal | A Quiet | Founding Circle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal-body">
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="/" class="logo">A QUIET</a>
+            <nav class="main-nav">
+                <a href="/" class="active">Exit Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Auth Gate -->
+    <div id="auth-gate" class="container auth-container">
+        <div class="auth-card">
+            <span class="eyebrow">The Founding Circle</span>
+            <h1 class="serif-sub">Enter the Sanctuary.</h1>
+            <p class="body-standard">Please provide your unique access token sent to your registered email.</p>
+            <form id="login-form" class="editorial-form">
+                <input type="text" id="member-token" placeholder="AQ-XXXX-2026" required style="color: var(--deep-walnut); border-bottom-color: var(--divider);">
+                <button type="submit" class="editorial-btn">Verify Identity</button>
+                <p id="auth-error" class="form-message error"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Portal Content -->
+    <main id="portal-content" class="portal-main" style="display: none;">
+        <section class="portal-hero">
+            <div class="container">
+                <div class="hero-layout">
+                    <div class="hero-text">
+                        <span class="eyebrow" id="member-tier-display">Founding Member</span>
+                        <h1 class="editorial-title">Welcome back, <span id="member-name">Member</span>.</h1>
+                        <div class="founder-message">
+                            <p class="body-large" style="font-style: italic;">"The walnut is arriving. The tubes are warming up. We are building this for you, the active listener. Thank you for anchoring this sanctuary."</p>
+                            <p class="body-small">— Jeff Roykin, Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portal-section">
+            <div class="container">
+                <div class="rule-divider"></div>
+                <div style="margin-bottom: 60px;">
+                    <span class="section-num">01.</span>
+                    <h2 class="serif-sub">Build-out Progress</h2>
+                    <p class="body-standard">Real-time snapshots from the Mazeh St. / Montefiore site as we install the physical soul of A Quiet.</p>
+                </div>
+
+                <div class="build-grid">
+                    <div class="build-item">
+                        <img src="../images/interior-of-a-high-end-listening-bar-und.png" alt="Construction of walnut cabinetry" class="build-img">
+                        <div class="build-caption">
+                            <span>Week 04: Cabinetry Installation</span>
+                            <span>Ahad Ha'am Basement</span>
+                        </div>
+                    </div>
+                    <div class="build-item">
+                        <img src="../images/close-up-of-a-worker-s-hands-adjusting-a.png" alt="Technician adjusting vacuum tubes" class="build-img">
+                        <div class="build-caption">
+                            <span>Week 05: Audio Chain Calibration</span>
+                            <span>Leben CS-600X Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portal-section">
+            <div class="container">
+                <div class="rule-divider"></div>
+                <div style="margin-bottom: 60px;">
+                    <span class="section-num">02.</span>
+                    <h2 class="serif-sub">Exclusive Collection Preview</h2>
+                    <p class="body-standard">Founding Circle members get first refusal on our monthly 'Rarities' drop. Reserve your pressing before the 2026 public launch.</p>
+                </div>
+
+                <div id="exclusive-inventory" class="record-grid">
+                    <div class="loading-state">Fetching exclusive inventory...</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portal-section" style="padding-bottom: 120px;">
+            <div class="container">
+                <div class="rule-divider"></div>
+                <div class="status-card">
+                    <h3 class="serif-sub" style="font-size: 24px; margin-bottom: 10px;">Membership Status</h3>
+                    <p class="body-small">Your tier: <strong id="member-tier-label">Gold</strong></p>
+                    <p class="body-small">Joined: <span id="member-joined">April 2026</span></p>
+                    <div class="perks-list">
+                        <p class="body-small" style="margin-top: 20px;">Upcoming Ritual: <strong>The Glow Nocturne Mixer (June 15)</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-layout">
+            <div class="footer-left">
+                <div class="logo">A QUIET</div>
+            </div>
+            <div class="footer-right">
+                <p style="color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Member Exclusive Access &copy; 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="portal.js"></script>
+</body>
+</html>
