@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Inventory Logic ---
     async function fetchInventory() {
         try {
-            const response = await fetch(`https://baget.ai/api/public/databases/${INVENTORY_DB_ID}/rows`);
+            const response = await fetch(`https://app.baget.ai/api/public/databases/${INVENTORY_DB_ID}/rows`);
             if (!response.ok) throw new Error('Inventory fetch failed');
             const data = await response.json();
             allRecords = data;
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Community Stats Logic ---
     async function fetchWaitlistStats() {
         try {
-            const response = await fetch(`https://baget.ai/api/public/databases/${WAITLIST_DB_ID}/rows`);
+            const response = await fetch(`https://app.baget.ai/api/public/databases/${WAITLIST_DB_ID}/rows`);
             if (!response.ok) throw new Error('Stats fetch failed');
             const data = await response.json();
             // We have 178 baseline prospects from outreach + new signups
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Submitting to ${dbId}:`, data);
 
         try {
-            const response = await fetch(`https://baget.ai/api/public/databases/${dbId}/rows`, {
+            const response = await fetch(`https://app.baget.ai/api/public/databases/${dbId}/rows`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
