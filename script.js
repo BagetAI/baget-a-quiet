@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchInventory() {
         try {
             const response = await fetch(`https://baget.ai/api/public/databases/${INVENTORY_DB_ID}/rows`);
+            if (!response.ok) throw new Error('Inventory fetch failed');
             const data = await response.json();
             allRecords = data;
             renderRecords(allRecords);
@@ -41,18 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
         recordGallery.innerHTML = records.map(record => `
             <div class="record-card" data-genre="${record.Genre}">
                 <div class="record-info">
-                    <h3 class="record-artist">${record.Artist}</h3>
-                    <p class="record-album">${record['Album Title']}</p>
+                    <h3 class="record-artist">${record.Artist || 'Unknown Artist'}</h3>
+                    <p class="record-album">${record['Album Title'] || 'Unknown Album'}</p>
                     <div class="record-meta">
-                        <span>${record.Genre}</span>
+                        <span>${record.Genre || 'Jazz'}</span>
                         <span>${record.Condition || 'Mint'}</span>
-                        <span>${record['Stock Level'] > 0 ? 'In Stock' : 'On Order'}</span>
+                        <span>${(record['Stock Level'] > 0 || record.stock_level > 0) ? 'In Stock' : 'On Order'}</span>
                     </div>
                 </div>
                 <div>
-                    <p class="record-price">${record.Price} ILS</p>
+                    <p class="record-price">${record.Price || record.price || '---'} ILS</p>
                     <button class="notify-btn" data-record="${record.Artist} - ${record['Album Title']}">
-                        ${record['Stock Level'] > 0 ? 'Reserve Copy' : 'Notify When Back'}
+                        ${(record['Stock Level'] > 0 || record.stock_level > 0) ? 'Reserve Copy' : 'Notify When Back'}
                     </button>
                 </div>
             </div>
@@ -68,10 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchWaitlistStats() {
         try {
             const response = await fetch(`https://baget.ai/api/public/databases/${WAITLIST_DB_ID}/rows`);
+            if (!response.ok) throw new Error('Stats fetch failed');
             const data = await response.json();
             // We have 178 baseline prospects from outreach + new signups
-            // New logic: Use baseline + data.length but animate it
-            const total = 178 + (data.length || 0);
+            const total = 178 + (Array.isArray(data) ? data.length : 0);
             animateValue(totalInterestEl, parseInt(totalInterestEl.textContent) || 178, total, 1000);
         } catch (error) {
             console.error('Error fetching waitlist stats:', error);
@@ -101,7 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = btn.dataset.filter;
             const filtered = filter === 'all' 
                 ? allRecords 
-                : allRecords.filter(r => r.Genre && r.Genre.toLowerCase().includes(filter.toLowerCase()));
+                : allRecords.filter(r => {
+                    const genre = r.Genre || r.genre || '';
+                    return genre.toLowerCase().includes(filter.toLowerCase());
+                });
             
             renderRecords(filtered);
         });
@@ -111,8 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function openNotifyModal(recordTitle) {
         if (!modal) return;
         modalTitle.textContent = recordTitle;
-        interestInput.value = recordTitle;
+        if (interestInput) interestInput.value = recordTitle;
         modal.classList.add('active');
+        
+        // Clear previous messages
+        const msg = document.getElementById('notify-message');
+        if (msg) {
+            msg.textContent = '';
+            msg.className = 'form-message';
+        }
     }
 
     if (closeModal) {
@@ -127,7 +138,17 @@ document.addEventListener('DOMContentLoaded', () => {
     async function handleSubmission(form, dbId, messageElement, successMsg) {
         const formData = new FormData(form);
         const data = {};
-        formData.forEach((value, key) => data[key] = value);
+        formData.forEach((value, key) => {
+            if (value && value !== "") {
+                data[key] = value;
+            }
+        });
+        
+        // Ensure name is never empty for database compatibility
+        if (!data.name && form.id === 'notify-form') {
+            data.name = 'Notification Request';
+        }
+        
         data.signup_date = new Date().toISOString();
 
         const submitBtn = form.querySelector('button');
@@ -135,27 +156,38 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Processing...';
 
+        console.log(`Submitting to ${dbId}:`, data);
+
         try {
             const response = await fetch(`https://baget.ai/api/public/databases/${dbId}/rows`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
                 body: JSON.stringify({ data })
             });
+
+            const result = await response.json().catch(() => ({ error: 'Invalid JSON response' }));
 
             if (response.ok) {
                 messageElement.textContent = successMsg;
                 messageElement.className = 'form-message success';
-                messageElement.style.color = form.id === 'signup-form' ? 'var(--accent)' : 'var(--deep-walnut)';
+                messageElement.style.color = (form.id === 'signup-form') ? 'var(--accent)' : 'var(--deep-walnut)';
                 form.reset();
+                
                 if (form.id === 'notify-form') {
-                    setTimeout(() => modal.classList.remove('active'), 2000);
+                    setTimeout(() => modal.classList.remove('active'), 2500);
                 }
+                
                 // Refresh stats
                 fetchWaitlistStats();
             } else {
-                throw new Error('Submission failed');
+                console.error('API Error:', result);
+                throw new Error(result.error || 'Submission failed');
             }
         } catch (error) {
+            console.error('Submission error:', error);
             messageElement.textContent = 'The sanctuary is busy. Try again soon.';
             messageElement.className = 'form-message error';
             messageElement.style.color = '#e74c3c';

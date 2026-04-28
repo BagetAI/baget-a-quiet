@@ -8,6 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Small fix for the select options color */
+        select option {
+            background-color: white;
+            color: #333;
+        }
+        /* Style for the select when a placeholder is selected */
+        select:invalid {
+            color: rgba(245, 242, 233, 0.5);
+        }
+        select:focus option {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -205,13 +219,13 @@
                             <input type="email" id="email" name="email" placeholder="Email Address" required>
                         </div>
                         <div class="form-row">
-                            <select id="neighborhood" name="neighborhood" style="background: transparent; border: none; border-bottom: 1px solid rgba(245, 242, 233, 0.2); padding: 15px 0; color: var(--aged-parchment); font-family: var(--font-body); font-size: 16px; outline: none; appearance: none; -webkit-appearance: none;">
-                                <option value="" disabled selected style="color: #333;">Preferred Neighborhood</option>
-                                <option value="Lev HaIr" style="color: #333;">Lev HaIr</option>
-                                <option value="Montefiore" style="color: #333;">Montefiore</option>
-                                <option value="Florentin" style="color: #333;">Florentin</option>
-                                <option value="Neve Tzedek" style="color: #333;">Neve Tzedek</option>
-                                <option value="Other" style="color: #333;">Other</option>
+                            <select id="neighborhood" name="neighborhood" required style="background: transparent; border: none; border-bottom: 1px solid rgba(245, 242, 233, 0.2); padding: 15px 0; color: var(--aged-parchment); font-family: var(--font-body); font-size: 16px; outline: none; appearance: none; -webkit-appearance: none;">
+                                <option value="" disabled selected>Preferred Neighborhood</option>
+                                <option value="Lev HaIr">Lev HaIr</option>
+                                <option value="Montefiore">Montefiore</option>
+                                <option value="Florentin">Florentin</option>
+                                <option value="Neve Tzedek">Neve Tzedek</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         <button type="submit" class="editorial-btn">Request Invitation</button>
@@ -248,6 +262,7 @@
                 <nav class="footer-nav">
                     <a href="#philosophy">Philosophy</a>
                     <a href="#collection">Collection</a>
+                    <a href="#waitlist">Waitlist</a>
                     <a href="https://instagram.com/aquiet.tlv" target="_blank">Instagram</a>
                 </nav>
                 <p style="color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">&copy; 2026 A Quiet. Preservation of Sound.</p>
