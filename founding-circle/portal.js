@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`https://baget.ai/api/public/databases/${MEMBERS_DB_ID}/rows`);
+            const response = await fetch(`https://app.baget.ai/api/public/databases/${MEMBERS_DB_ID}/rows`);
             const members = await response.json();
             
             const member = members.find(m => m.token === token);
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchExclusiveInventory() {
         try {
-            const response = await fetch(`https://baget.ai/api/public/databases/${INVENTORY_DB_ID}/rows`);
+            const response = await fetch(`https://app.baget.ai/api/public/databases/${INVENTORY_DB_ID}/rows`);
             const data = await response.json();
             
             // Sort by price high to low for "exclusive" feel
