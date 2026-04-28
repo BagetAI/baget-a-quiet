@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`https://app.baget.ai/api/public/databases/${INVENTORY_DB_ID}/rows`);
             if (!response.ok) throw new Error('Inventory fetch failed');
             const data = await response.json();
-            allRecords = data;
+            allRecords = Array.isArray(data) ? data : (data.rows ?? []);
             renderRecords(allRecords);
         } catch (error) {
             console.error('Error fetching inventory:', error);
@@ -68,11 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Community Stats Logic ---
     async function fetchWaitlistStats() {
         try {
-            const response = await fetch(`https://app.baget.ai/api/public/databases/${WAITLIST_DB_ID}/rows`);
+            const response = await fetch(`https://app.baget.ai/api/public/databases/${WAITLIST_DB_ID}/count`);
             if (!response.ok) throw new Error('Stats fetch failed');
             const data = await response.json();
             // We have 178 baseline prospects from outreach + new signups
-            const total = 178 + (Array.isArray(data) ? data.length : 0);
+            const total = 178 + (typeof data?.count === "number" ? data.count : 0);
             animateValue(totalInterestEl, parseInt(totalInterestEl.textContent) || 178, total, 1000);
         } catch (error) {
             console.error('Error fetching waitlist stats:', error);
