@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('notify-modal');
     const closeModal = document.getElementById('close-modal');
     const modalTitle = document.getElementById('modal-record-title');
-    const interestInput = document.getElementById('record-interest');
+    const interestInput = document.getElementById('record_interest');
     const totalInterestEl = document.getElementById('total-interest');
 
     let allRecords = [];
@@ -70,13 +70,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`https://baget.ai/api/public/databases/${WAITLIST_DB_ID}/rows`);
             const data = await response.json();
             // We have 178 baseline prospects from outreach + new signups
+            // New logic: Use baseline + data.length but animate it
             const total = 178 + (data.length || 0);
-            if (totalInterestEl) {
-                totalInterestEl.textContent = total;
-            }
+            animateValue(totalInterestEl, parseInt(totalInterestEl.textContent) || 178, total, 1000);
         } catch (error) {
             console.error('Error fetching waitlist stats:', error);
         }
+    }
+
+    function animateValue(obj, start, end, duration) {
+        if (!obj) return;
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
     }
 
     // --- Filtering Logic ---
@@ -96,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Modal Logic ---
     function openNotifyModal(recordTitle) {
+        if (!modal) return;
         modalTitle.textContent = recordTitle;
         interestInput.value = recordTitle;
         modal.classList.add('active');
@@ -131,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 messageElement.textContent = successMsg;
                 messageElement.className = 'form-message success';
+                messageElement.style.color = form.id === 'signup-form' ? 'var(--accent)' : 'var(--deep-walnut)';
                 form.reset();
                 if (form.id === 'notify-form') {
                     setTimeout(() => modal.classList.remove('active'), 2000);
@@ -143,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             messageElement.textContent = 'The sanctuary is busy. Try again soon.';
             messageElement.className = 'form-message error';
+            messageElement.style.color = '#e74c3c';
         } finally {
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
