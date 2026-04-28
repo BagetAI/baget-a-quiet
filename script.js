@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Database IDs
     const INVENTORY_DB_ID = '8ebb9b16-e8d3-4a8a-ab31-687a946f659c';
     const WAITLIST_DB_ID = 'e4f15751-13fd-418b-a52b-2d5198da933f';
+    const VENUE_DB_ID = 'a547b906-3089-41de-af0e-5a837e7e691d';
 
     const recordGallery = document.getElementById('record-gallery');
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -12,6 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modal-record-title');
     const interestInput = document.getElementById('record_interest');
     const totalInterestEl = document.getElementById('total-interest');
+    
+    // Venue Tracker Elements
+    const venueTrackerList = document.getElementById('venue-tracker-list');
+    const huntProgressFill = document.getElementById('hunt-progress-fill');
+    const huntProgressLabel = document.getElementById('hunt-progress-label');
+    const milestoneTicks = document.querySelectorAll('.milestone-tick');
 
     let allRecords = [];
 
@@ -62,6 +69,81 @@ document.addEventListener('DOMContentLoaded', () => {
         // Attach listeners to new buttons
         document.querySelectorAll('.notify-btn').forEach(btn => {
             btn.addEventListener('click', () => openNotifyModal(btn.dataset.record));
+        });
+    }
+
+    // --- Venue Hunt Logic ---
+    async function fetchVenues() {
+        try {
+            const response = await fetch(`https://app.baget.ai/api/public/databases/${VENUE_DB_ID}/rows`);
+            if (!response.ok) throw new Error('Venue fetch failed');
+            const data = await response.json();
+            const venues = Array.isArray(data) ? data : (data.rows ?? []);
+            renderVenues(venues);
+            updateHuntProgress(venues);
+        } catch (error) {
+            console.error('Error fetching venues:', error);
+            if (venueTrackerList) {
+                venueTrackerList.innerHTML = '<div class="error-state">Venue tracking temporarily unavailable.</div>';
+            }
+        }
+    }
+
+    function renderVenues(venues) {
+        if (!venueTrackerList) return;
+        
+        // Take top 4 or relevant shortlist
+        const shortlist = venues.filter(v => v.status !== 'Discarded').slice(0, 4);
+
+        venueTrackerList.innerHTML = shortlist.map(venue => {
+            const statusClass = venue.status.toLowerCase().includes('negotiating') ? 'negotiating' : 'inspected';
+            return `
+                <div class="venue-item">
+                    <div class="venue-main">
+                        <h4>${venue.address}</h4>
+                        <p>${venue.neighborhood} / ${venue.square_footage} sqm</p>
+                    </div>
+                    <span class="venue-status-tag ${statusClass}">${venue.status}</span>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function updateHuntProgress(venues) {
+        if (!huntProgressFill || !huntProgressLabel) return;
+
+        let progress = 25; // Default: Auditing
+        let statusText = "Auditing Potential Shells";
+
+        const statuses = venues.map(v => v.status.toLowerCase());
+        
+        if (statuses.some(s => s.includes('lease signed'))) {
+            progress = 100;
+            statusText = "Lease Signed";
+            setActiveMilestones(4);
+        } else if (statuses.some(s => s.includes('negotiating'))) {
+            progress = 75;
+            statusText = "Negotiating Final Terms";
+            setActiveMilestones(3);
+        } else if (statuses.some(s => s.includes('inspected'))) {
+            progress = 50;
+            statusText = "Sites Inspected & Vetted";
+            setActiveMilestones(2);
+        } else {
+            setActiveMilestones(1);
+        }
+
+        huntProgressFill.style.width = `${progress}%`;
+        huntProgressLabel.textContent = statusText;
+    }
+
+    function setActiveMilestones(count) {
+        milestoneTicks.forEach((tick, index) => {
+            if (index < count) {
+                tick.classList.add('active');
+            } else {
+                tick.classList.remove('active');
+            }
         });
     }
 
@@ -216,4 +298,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init
     fetchInventory();
     fetchWaitlistStats();
+    fetchVenues();
 });
