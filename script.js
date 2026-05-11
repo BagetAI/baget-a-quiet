@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Database IDs
     const INVENTORY_DB_ID = '8ebb9b16-e8d3-4a8a-ab31-687a946f659c';
     const WAITLIST_DB_ID = 'e4f15751-13fd-418b-a52b-2d5198da933f';
-    const VENUE_DB_ID = 'a547b906-3089-41de-af0e-5a837e7e691d';
+    const VENUE_DB_ID = '9ef0e7c8-a116-44e5-af91-a946614b995f';
 
     const recordGallery = document.getElementById('record-gallery');
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`https://app.baget.ai/api/public/databases/${INVENTORY_DB_ID}/rows`);
             if (!response.ok) throw new Error('Inventory fetch failed');
             const data = await response.json();
-            allRecords = Array.isArray(data) ? data : (data.rows ?? []);
+            allRecords = data.rows ?? [];
             renderRecords(allRecords);
         } catch (error) {
             console.error('Error fetching inventory:', error);
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(`https://app.baget.ai/api/public/databases/${VENUE_DB_ID}/rows`);
             if (!response.ok) throw new Error('Venue fetch failed');
-            const data = await response.json();
-            const venues = Array.isArray(data) ? data : (data.rows ?? []);
+            const result = await response.json();
+            const venues = result.rows ?? [];
             renderVenues(venues);
             updateHuntProgress(venues);
         } catch (error) {
@@ -92,16 +92,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderVenues(venues) {
         if (!venueTrackerList) return;
         
-        // Take top 4 or relevant shortlist
-        const shortlist = venues.filter(v => v.status !== 'Discarded').slice(0, 4);
+        // Take relevant shortlist (filter out any discarded if field exists, or just show top 5)
+        const shortlist = venues.filter(v => (v.status || '').toLowerCase() !== 'discarded').slice(0, 5);
 
         venueTrackerList.innerHTML = shortlist.map(venue => {
-            const statusClass = venue.status.toLowerCase().includes('negotiating') ? 'negotiating' : 'inspected';
+            const status = (venue.status || 'Auditing').toLowerCase();
+            let statusClass = 'inspected';
+            if (status.includes('negotiating')) statusClass = 'negotiating';
+            if (status.includes('signed')) statusClass = 'negotiating'; // Reuse negotiating color for signed
+            
             return `
                 <div class="venue-item">
                     <div class="venue-main">
                         <h4>${venue.address}</h4>
-                        <p>${venue.neighborhood} / ${venue.square_footage} sqm</p>
+                        <p>${venue.neighborhood} / ${venue.square_footage} sqm / ${venue.rent_ils.toLocaleString()} ILS</p>
                     </div>
                     <span class="venue-status-tag ${statusClass}">${venue.status}</span>
                 </div>
@@ -115,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let progress = 25; // Default: Auditing
         let statusText = "Auditing Potential Shells";
 
-        const statuses = venues.map(v => v.status.toLowerCase());
+        const statuses = venues.map(v => (v.status || '').toLowerCase());
         
         if (statuses.some(s => s.includes('lease signed'))) {
             progress = 100;
@@ -237,8 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const originalText = submitBtn.textContent;
         submitBtn.disabled = true;
         submitBtn.textContent = 'Processing...';
-
-        console.log(`Submitting to ${dbId}:`, data);
 
         try {
             const response = await fetch(`https://app.baget.ai/api/public/databases/${dbId}/rows`, {
